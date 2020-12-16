@@ -1,0 +1,10 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env"
+  ],
+  "minify"
+    // "@babel/preset-stage-0"
+  ],
+  "plugins": ["@babel/plugin-transform-runtime"]
+}

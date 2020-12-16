@@ -1,0 +1,40 @@
+{
+  "name": "t-catalog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "tsc ./src/index.ts && babel ./src/index.js -o ./dist/index.js --no-comments",
+    "build": "tsc ./src/index.ts"
+  },
+  "dependencies": {
+    "qiniu": "^7.3.0",
+    "prettier": "^1.14.2",
+    "pretty-quick": "^1.6.0",
+    "chalk": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-stage-0": "^7.8.3",
+    "babel-preset-minify": "^0.5.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.3",
+    "mocha": "^7.1.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "keywords": [
+    "catalog",
+    "plugin"
+  ]
+}
