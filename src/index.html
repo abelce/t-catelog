@@ -1,0 +1,430 @@
+<html lang="" style="font-size: 20px;">
+<head>
+    <meta charset="UTF-8" />
+    <title>我的技术测试</title>
+    <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <meta name="keywords" content="vwood" />
+    <meta name="description" content="记录个人心得，在以后可以翻阅，巩固知识" />
+    <meta property="og:title" content="vwood" />
+    <meta property="author" content="1061225829@qq.com" />
+    <meta property="og:url" content="https://www.admin.vwood.xyz/" />
+    <meta property="og:site_name" content="vwood" />
+    <meta
+            property="og:description"
+            content="记录个人心得，在以后可以翻阅，巩固知识"
+    />
+    <meta
+            http-equiv="Cache-Control"
+            content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <link
+            rel="stylesheet"
+            href="https://admin.vwood.xyz/assets/plugins/editor/css/editormd.min.css"
+    />
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://at.alicdn.com/t/font_1053847_4g7dz374jab.css"
+    />
+    <!-- 提前解析dns -->
+    <link rel="dns-prefetch" href="admin.vwood.xyz" />
+    <link
+            href="https://admin.vwood.xyz/0.0369732e9bb94accd05b.css"
+            rel="stylesheet"
+    />
+    <link
+            href="https://admin.vwood.xyz/app.86cd308fede30d8bdc77.css"
+            rel="stylesheet"
+    />
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://admin.vwood.xyz/14.bfe43d330fddaecba88e.css"
+    />
+    <script
+            charset="utf-8"
+            src="https://admin.vwood.xyz/14.bfe43d330fddaecba88e.js"
+    ></script>
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://admin.vwood.xyz/1.fa844500e35482cbfc82.css"
+    />
+    <script
+            charset="utf-8"
+            src="https://admin.vwood.xyz/1.fa844500e35482cbfc82.js"
+    ></script>
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://admin.vwood.xyz/12.4438f85449b782d5aff1.css"
+    />
+    <script
+            charset="utf-8"
+            src="https://admin.vwood.xyz/12.4438f85449b782d5aff1.js"
+    ></script>
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://admin.vwood.xyz/10.7386a22094e29aa2b3a5.css"
+    />
+    <script
+            charset="utf-8"
+            src="https://admin.vwood.xyz/10.7386a22094e29aa2b3a5.js"
+    ></script>
+    <style>
+        #nav-list {
+            position: fixed;
+            right: 0;
+            top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <div>
+        <div id="layout" class="layout">
+            <div class="layout_content">
+                <div class="detail_container">
+                    <div>
+                        <div class="post_container">
+                            <div class="post">
+                                <div class="post_content">
+                                    <div class="post_header">
+                                        <h1 class="name">
+                                            jquery.i18n.properties的使用讲解与实例
+                                        </h1>
+                                        <div class="base-info">
+                          <span class="item"
+                          ><i class="iconfont icon-time"></i
+                          ><span>2019-09-15</span
+                          ><span
+                                  id="/articles/d2db4070-5931-4f15-a58f-eb92df977747"
+                                  class="leancloud_visitors"
+                                  data-flag-title="Your Article Title"
+                          ><em class="post-meta-item-text">阅读量: </em
+                          ><i class="leancloud-visitors-count">230</i></span
+                          ></span
+                          ><a
+                                                target="_blank"
+                                                href="/blog/d2db4070-5931-4f15-a58f-eb92df977747/edit"
+                                        >编辑</a
+                                        >
+                                        </div>
+                                    </div>
+                                    <div class="detail_body">
+                                        <div class="content">
+                                            <div class="marked">
+                                                <blockquote>
+                                                    <p>
+                                                        最近在做一个主页时需要用国际化，用HTML+JS，还有jQuery,
+                                                        于是就选择了jquery.i18n.properties.js。本文介绍的示例还依赖jquery、jquery.json。
+                                                    </p>
+                                                </blockquote>
+                                                <h2 id="介绍">介绍</h2>
+                                                <p>
+                                                    jquery.i18n.properties是一款轻量级的国际化插件，采用.properties文件来对javascript文件进行国际化，即根据用户指定的语言和国家编码来解析对应的以".properties"为后缀的文件。
+                                                </p>
+                                                <pre><code class="language-code">messages.properties
+messages_zh_CN.properties
+messages_en_US.properties</code></pre>
+                                                <h2 id="api">API</h2>
+                                                <p>
+                                                    jQuery.i18n.properties相对于其他的插件，只有少量的API，即$.i18n.properties()、$.i18n.prop()、$.i18n.normaliseLanguageCode()等:
+                                                </p>
+                                                <h3 id="jqueryi18nproperties">
+                                                    jQuery.i18n.properties
+                                                </h3>
+                                                <table>
+                                                    <thead>
+                                                    <tr>
+                                                        <th align="left">选项</th>
+                                                        <th align="left">描述</th>
+                                                        <th align="left">类型</th>
+                                                        <th align="left">可选</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td align="left">name</td>
+                                                        <td align="left">资源文件的名称</td>
+                                                        <td align="left">string | [string]</td>
+                                                        <td align="left">否</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">language</td>
+                                                        <td align="left">
+                                                            指定语言编码： （en： 英文， zh：
+                                                            中文），或者同时指定语言编码和国家编码(例如：
+                                                            zh_CN, en_US)等
+                                                        </td>
+                                                        <td align="left">string</td>
+                                                        <td align="left">是</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">path</td>
+                                                        <td align="left">资源文件所在的路径</td>
+                                                        <td align="left">string</td>
+                                                        <td align="left">否</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">mode</td>
+                                                        <td align="left">
+                                                            加载模式：
+                                                            “vars”表示以javascript变量和函数的形式使用文件中的key，“map”表示以Map的方式使用文件中的key，“both”表示可以同时使用两种方式。如果资源文件中的key包含javascript中的关键字，只能使用map。默认值是vars。
+                                                        </td>
+                                                        <td align="left">string</td>
+                                                        <td align="left">是</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">cache</td>
+                                                        <td align="left">
+                                                            指定浏览器是否缓存资源文件，默认false
+                                                        </td>
+                                                        <td align="left">boolean</td>
+                                                        <td align="left">是</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">encoding</td>
+                                                        <td align="left">
+                                                            指定加载资源文件时的编码格式，默认utf-8
+                                                        </td>
+                                                        <td align="left">string</td>
+                                                        <td align="left">是</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">debug</td>
+                                                        <td align="left">控制台是否记录记录log</td>
+                                                        <td align="left">boolean</td>
+                                                        <td align="left">是</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">async</td>
+                                                        <td align="left">
+                                                            指定调用callback（回调）函数的方式，false:
+                                                            所有的资源文件加载请求发送完毕后就调用回调函数，
+                                                            true：所有的资源加载并解析完成后才调用回调函数。默认false
+                                                        </td>
+                                                        <td align="left">boolean</td>
+                                                        <td align="left">是</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">namespace</td>
+                                                        <td align="left">
+                                                            指定资源文件的keys被存放在namespace下，即$.i18n.properties[namespace][key],
+                                                            使用namespace可以最大限度的减少冲突和重写的概率;
+                                                            默认为null不使用namespace
+                                                        </td>
+                                                        <td align="left">string</td>
+                                                        <td align="left">是</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="left">callback</td>
+                                                        <td align="left">方法执行完的回调函数</td>
+                                                        <td align="left">function</td>
+                                                        <td align="left">是</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <pre><code class="language-javascript">jQuery.i18n.properties({
+    name:'Messages',
+    path:'bundle/',
+    mode:'both',
+    language:'pt_BR',
+    async: true,
+    callback: function() {
+        $('#content).html($.i18n.prop('msg_hello'));
+    }
+});</code></pre>
+                                                <h3 id="i18npropkey">$.i18n.prop(key)</h3>
+                                                <p>通过key以Map的形式获取资源文件中对应的值</p>
+                                                <pre><code class="language-javascript"> $('#content).html($.i18n.prop('msg_hello'));</code></pre>
+                                                <h3 id="i18nnormaliselanguagecodesettings">
+                                                    $.i18n.normaliseLanguageCode(settings)
+                                                </h3>
+                                                <ol>
+                                                    <li>
+                                                        当settings没有language属性或language属性值不符合规范时，获取浏览器的语言编码，格式化并返回语言编码。
+                                                    </li>
+                                                    <li>
+                                                        当settings中language满足要求时，格式化并返回语言编码。
+                                                    </li>
+                                                </ol>
+                                                <h2 id="实例">实例</h2>
+                                                <p>
+                                                    本项目是运行在<strong>nginx</strong>上的，关于nginx的安装和配置，同学们自行解决^v^
+                                                </p>
+                                                <h3 id="依赖引入">依赖引入</h3>
+                                                <pre><code class="language-code">&lt;script src="lib/jquery/jquery-3.2.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="lib/i18n/jquery.json.min.js"&gt;&lt;/script&gt;
+&lt;script src="lib/i18n/jquery.i18n.properties.js"&gt;&lt;/script&gt;</code></pre>
+                                                <h3 id="html">html</h3>
+                                                <pre><code class="language-html">&lt;div&gt;
+    &lt;p id="text"&gt;&lt;/p&gt;
+    &lt;button onclick="switchLang()" id="lang"&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                                                <h2 id="indexjs">index.js</h2>
+                                                <pre><code class="language-javascript">var LANGUAGE_CODE = "en_US"; //标识语言
+
+function loadProperties(type) {
+    jQuery.i18n.properties({
+        name: 'strings', // 资源文件名称
+        path: 'static/', // 资源文件所在目录路径
+        mode: 'map', // 模式：变量或 Map
+        language: type, // 对应的语言
+        cache: false,
+        encoding: 'UTF-8',
+        callback: function () { // 回调方法
+            $('#text').html($.i18n.prop('string_text'));
+            $('#lang').html($.i18n.prop('string_lang'));
+        }
+    });
+}
+
+function switchLang() {
+    LANGUAGE_CODE = LANGUAGE_CODE == 'zh_CN' ? 'en_US' : 'zh_CN';
+    loadProperties(LANGUAGE_CODE);
+}
+
+$(document).ready(function () {
+    LANGUAGE_CODE = jQuery.i18n.normaliseLanguageCode({}); //获取浏览器的语言
+    loadProperties(LANGUAGE_CODE);
+})</code></pre>
+                                                <h3 id="资源文件properties文件">
+                                                    资源文件(.properties)文件
+                                                </h3>
+                                                <p>strings_en_US.properties:</p>
+                                                <pre><code class="language-code">string_text=Hello world!
+string_lang=Chinese</code></pre>
+                                                <p>strings_zh_CN.properties:</p>
+                                                <pre><code class="language-code">string_text=你好，世界！
+string_lang=英文</code></pre>
+                                                <h3 id="运行效果">运行效果</h3>
+                                                <h4 id="中文">中文</h4>
+                                                <p>
+                                                    <img
+                                                            src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FiZWxjZS9zdGF0aWNSZXNvdXJjZS9tYXN0ZXIvaW1hZ2VzLyVFNCVCOCVBRCVFNiU5NiU4Ny5wbmc?x-oss-process=image/format,png"
+                                                            alt=""
+                                                    />
+                                                </p>
+
+                                                <h3 id="英文">英文</h3>
+                                                <p>
+                                                    <img
+                                                            src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2FiZWxjZS9zdGF0aWNSZXNvdXJjZS9tYXN0ZXIvaW1hZ2VzLyVFOCU4QiVCMSVFNiU5NiU4Ny5wbmc?x-oss-process=image/format,png"
+                                                            alt=""
+                                                    />
+                                                </p>
+
+                                                <p>
+                                                    以上就是实例的所有代码，可以点击这里
+                                                    <a
+                                                            href="https://github.com/abelce/jquery_i18n_properties"
+                                                    >下载示例</a
+                                                    >
+                                                </p>
+                                                <hr />
+                                                <p>
+                                                    <strong
+                                                    >以上就是本次学习到的知识，本文有些地方参考了他人的文章，如果本文有不对之处欢迎指出。</strong
+                                                    >
+                                                    <a href="mailTo:106125829@qq.com"
+                                                    >1061225829@qq.com</a
+                                                    >
+                                                </p>
+                                                <p>
+                                                    <a
+                                                            href="http://blog.tangzhengxiong.com/article/72bec012-2335-4f02-bb4c-6330209ecbc3"
+                                                    >原文地址</a
+                                                    >
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="operations">
+                                        <div class="operations_list">
+                                            <a href="javascript:;" class="operations_item"
+                                            ><i
+                                                    aria-label="icon: like"
+                                                    class="anticon anticon-like"
+                                            ><svg
+                                                    viewBox="64 64 896 896"
+                                                    focusable="false"
+                                                    class=""
+                                                    data-icon="like"
+                                                    width="1em"
+                                                    height="1em"
+                                                    fill="currentColor"
+                                                    aria-hidden="true"
+                                            >
+                                                <path
+                                                        d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 0 0-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 0 0 471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 0 1 6.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 0 1 6.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 0 1 6.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0 1 42.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"
+                                                ></path></svg></i
+                                            ><span>1</span></a
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comments">
+                                    <div class="commentInput">
+                                        <textarea rows="4" class="ant-input"></textarea>
+                                        <div class="tools">
+                                            <div class="actions">
+                                                <button
+                                                        type="button"
+                                                        class="ant-btn ant-btn-primary"
+                                                >
+                                                    <span>评 论</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="no_comment">--没有任何评论--</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar">
+                        <div class="sidebar_block">
+                            <div class="block_title">关于作者</div>
+                            <div
+                                    class="divider ant-divider ant-divider-horizontal"
+                                    role="separator"
+                            ></div>
+                            <div class="block_body">
+                                <div class="author_block">
+                                    <a class="user_info" href="/user/asfafasdf"
+                                    ><span srv="" class="ant-avatar ant-avatar-circle"
+                                    ><span
+                                            class="ant-avatar-string"
+                                            style="transform: scale(1) translateX(-50%);"
+                                    ></span
+                                    ></span>
+                                        <div class="username">vwood</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="nav-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layout_footer">
+                <div class="footer">
+                    <div class="beian">
+                        <a href="http://beian.miit.gov.cn/" target="_blank"
+                        >蜀ICP备19030923号-1</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

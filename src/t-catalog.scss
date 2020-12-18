@@ -1,0 +1,40 @@
+.t_catalog {
+    font-size: 14px;
+}
+
+.t_catalog_item {
+
+}
+
+.t_catalog_item {
+    display: block;
+    padding: 4px;
+    border-left: 2px solid transparent;
+    color: #000000;
+    position: relative;
+    padding: 4px;
+    font-weight: 700;
+    a {
+        color: #000000;
+    }
+}
+
+.t_catalog_item::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.t_catalog_item_active {
+    a {
+        color: #1890ff;
+    }
+}
+
+.t_catalog_item_active::before {
+    background-color: #1890ff;
+}
